@@ -23,3 +23,7 @@
   border-width: 15px 15px 0 15px;
   border-color: palette(blue, light) transparent transparent transparent;
 }
+
+.map-section__gmap iframe{
+  pointer-events: none;
+}

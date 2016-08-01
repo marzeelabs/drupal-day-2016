@@ -107,4 +107,16 @@ $(function() {
     });
   });
 
+
+  //- function for g maps
+  $(function() {
+    $('.map-section__gmap').click(function () {
+        $('.map-section__gmap iframe').css("pointer-events", "auto");
+    });
+
+    $( ".map-section__gmap" ).mouseleave(function() {
+      $('.map-section__gmap iframe').css("pointer-events", "none");
+    });
+  });
+
 });
