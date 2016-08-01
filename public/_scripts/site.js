@@ -1,6 +1,55 @@
 $(function() {
 
-  var breakMobile = 730; // viewport px breakpoint
+  var breakMobile = 730, // viewport px breakpoint
+
+      waitForScroll = false,
+
+      triggerHashChange = function() {
+        $( window ).trigger('hashchange');
+      },
+
+      scrollToSection = function() {
+        var $sectionElement = $("section" + location.hash + '-section');
+
+        if ($sectionElement.length) {
+          waitForScroll = true;
+
+          // We can't use $(".navigation").outerHeight() because
+          // we'd need to wait for the CSS animation to finish.
+          // That's why we do 83px hardcoded.
+          $("html, body").stop().animate({
+            scrollTop: $sectionElement.scrollTop() + $sectionElement.offset().top - 59 + 1,
+          }, 500, function() {
+            waitForScroll = false;
+          });
+        }
+      },
+
+      setNavigationItemActive = function() {
+        var currentCategory = '/' + window.location.pathname.substr(1).split('/')[0],
+            scrollPosition = $( document ).scrollTop() + $(".navigation").outerHeight(),
+            activeClass = 'is-active',
+            $navLinks = $(".navigation__menu__item a");
+
+            $navLinks.each(function() {
+              var linkHash = $(this).prop('hash'),
+                  linkHref = $(this).attr('href'),
+                  $section = $(linkHash + "-section"),
+                  sectionTop = $section.length ? $section.position().top : null,
+                  sectionBottom = $section.length ? $section.position().top + $section.height() : null;
+
+              if (linkHash) {
+                if (sectionTop <= scrollPosition && sectionBottom > scrollPosition) {
+                  $(this).parent().addClass(activeClass);
+                } else {
+                  $(this).parent().removeClass(activeClass);
+                }
+              } else if (linkHref === currentCategory) {
+                $(this).parent().addClass(activeClass);
+              }
+
+            });
+      },
 
   fixedHeader = function() {
     var viewportWidth = $( window ).width(),
@@ -27,21 +76,6 @@ $(function() {
   });
 
   $(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
-     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-       var target = $(this.hash);
-       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-       if (target.length) {
-         $('html,body').animate({
-           scrollTop: target.offset().top -58
-         }, 1000);
-         return false;
-       }
-     }
-    });
-  });
-
-  $(function() {
 
     var selectorElement = '.navigation li a , .intro-section__left a',
         targetElement = '.navigation__menu__item';
@@ -53,6 +87,10 @@ $(function() {
   });
 
   $(window).on('resize scroll', fixedHeader);
+
+  $( window ).on('hashchange', scrollToSection).trigger('hashchange');
+  $( window ).on('resize scroll', setNavigationItemActive);
+  $("a[href^='/#']").click(triggerHashChange);
 
 
   //- function for countdown
