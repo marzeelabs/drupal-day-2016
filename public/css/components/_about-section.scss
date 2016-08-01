@@ -17,13 +17,28 @@
     }
   }
 
-  a {
+  .about-links {
     font-weight: 700;
     color: white;
     transition: background ease 0.3s;
 
     &:hover {
       background: palette(blue, x-dark);
+    }
+  }
+
+  h6 {
+    font-weight: 300;
+    display: block;
+    margin-bottom: ritmo(3);
+
+    &:before {
+      content: "";
+      display: block;
+      background: palette(blue, x-dark);
+      height: 1px;
+      width: 120px;
+      margin: ritmo(5) auto;
     }
   }
 }

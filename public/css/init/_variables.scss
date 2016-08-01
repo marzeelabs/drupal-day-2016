@@ -54,7 +54,8 @@ $palettes: (
     dark: rgb(0, 85, 44) // #00552c palette(green, dark)
   ),
   blue: (
-    x-light: rgb(230, 240, 245), // #e6f0f5 palette(blue, x-light)
+    xx-light: rgb(230, 240, 245), // #e6f0f5 palette(blue, xx-light)
+    x-light: rgb(0, 255, 255), // #00FFFF palette(blue, xx-light)
     light: rgb(0, 148, 245), // #0194f5 palette(blue, light)
     base: rgb(0, 112, 168), // #0070a8 palette(blue)
     dark: rgb(0, 83, 131), // #005383 palette(blue, dark)

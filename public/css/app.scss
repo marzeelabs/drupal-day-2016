@@ -7,14 +7,17 @@
 // Layout styles
 @import "base/layout";
 
+// Import your fonts
+@import 'base/fonts';
+
 // Base styles
 @import "base/base";
 
-// MZ Harp styles
-// Replace by yours
+
 @import
   "components/navigation",
   "components/buttons",
+  "components/social-media",
   "components/intro-section",
   "components/about-section",
   "components/speakers-section",
