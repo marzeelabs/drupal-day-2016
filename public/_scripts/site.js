@@ -12,7 +12,7 @@ $(function() {
         var $sectionElement = $("section" + location.hash + '-section');
 
         if ($sectionElement.length) {
-          //waitForScroll = true;
+          waitForScroll = true;
 
           // We can't use $(".navigation").outerHeight() because
           // we'd need to wait for the CSS animation to finish.
