@@ -12,6 +12,19 @@
   transition: background ease 0.2s;
 
   &:hover {
-  background: palette(blue, light);
+    background: palette(blue, light);
+  }
+}
+
+.button-white {
+  @extend .button-green;
+  background: palette(white);
+  padding: ritmo(3) 20px;
+  color: palette(green);
+  transition: background color ease 0.2s;
+
+  &:hover {
+    background: palette(blue, light);
+    color: palette(white);
   }
 }
