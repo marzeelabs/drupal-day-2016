@@ -74,6 +74,7 @@
     overflow: hidden;
     padding: 0;
     margin: 0;
+    transition: max-height ease 0.75s;
 
     .is-open & {
       max-height: ritmo(134);
@@ -101,11 +102,11 @@
   }
 
   &:before {
-    top: - ritmo(1.5);
+    top: - ritmo(1.4);
   }
 
   &:after {
-    bottom: - ritmo(1.5);
+    bottom: - ritmo(1.4);
   }
 
   .is-open & {

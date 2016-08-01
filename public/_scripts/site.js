@@ -12,11 +12,11 @@ $(function() {
         var $sectionElement = $("section" + location.hash + '-section');
 
         if ($sectionElement.length) {
-          waitForScroll = true;
+          //waitForScroll = true;
 
           // We can't use $(".navigation").outerHeight() because
           // we'd need to wait for the CSS animation to finish.
-          // That's why we do 83px hardcoded.
+          // That's why we do 60px hardcoded.
           $("html, body").stop().animate({
             scrollTop: $sectionElement.scrollTop() + $sectionElement.offset().top - 59 + 1,
           }, 500, function() {
@@ -35,7 +35,7 @@ $(function() {
               var linkHash = $(this).prop('hash'),
                   linkHref = $(this).attr('href'),
                   $section = $(linkHash + "-section"),
-                  sectionTop = $section.length ? $section.position().top : null,
+                  sectionTop = $section.length ? $section.position().top : null;
                   sectionBottom = $section.length ? $section.position().top + $section.height() : null;
 
               if (linkHash) {
@@ -70,8 +70,13 @@ $(function() {
 
       // Force close mobile navigation when clicking anywhere (except the toggle button itself)
   $( document ).on('mousedown touchstart', function(event) {
+/*
     if (!$(event.target).closest(".navigation__mobile-menu__toggle").length) {
-      // $(".navigation.is-open").removeClass('is-open');
+      $(".navigation.is-open").removeClass('is-open');
+    }
+*/
+    if (!$(event.target).closest(".navigation").length) {
+      $(".navigation.is-open").removeClass('is-open');
     }
   });
 
@@ -82,7 +87,10 @@ $(function() {
 
     $(selectorElement).on('click touch', function(){
       $(targetElement).removeClass('is-active');
+      // this line might be temporary and relates to function on line #131
+      $('.first-selector').css("pointer-events", "auto");
       $(this).parent().addClass('is-active');
+      $(".navigation.is-open").removeClass('is-open');
     });
   });
 
@@ -118,5 +126,20 @@ $(function() {
       $('.map-section__gmap iframe').css("pointer-events", "none");
     });
   });
+
+  //- hack to first button in the menu to have a smooth scroll
+  $(function() {
+
+      $('.first-selector').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 500, function() {
+            waitForScroll = false;
+            $('.first-selector').css("pointer-events", "none");
+            $('.first-selector').parent().addClass("is-active");
+            });
+        return false;
+    });
+  }); ///
 
 });
