@@ -1,0 +1,13 @@
+#speakers-section {
+  @extend .section-commons;
+  background: palette(white);
+  color: palette(blue);
+
+  .section-titles__underlines {
+    background: palette(blue);
+
+    &:after {
+      background: palette(blue);
+    }
+  }
+}

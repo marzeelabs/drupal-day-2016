@@ -1,0 +1,26 @@
+// Init file to import sass vendors
+@import "init/init";
+
+//Normalize
+@import "base/normalize";
+
+// Layout styles
+@import "base/layout";
+
+// Base styles
+@import "base/base";
+
+// MZ Harp styles
+// Replace by yours
+@import
+  "components/navigation",
+  "components/buttons",
+  "components/intro-section",
+  "components/about-section",
+  "components/speakers-section",
+  "components/schedule-section",
+  "components/apply-section",
+  "components/map-section",
+  "components/sponsors-section",
+  "components/contacts-section",
+  "components/footer";

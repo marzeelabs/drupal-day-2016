@@ -1,0 +1,17 @@
+.button-green {
+  display: inline-block;
+  margin: ritmo(3) auto;
+  padding: ritmo(2) 15px;
+  background: palette(green);
+  border-radius: 5px;
+  color: palette(white);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  @include ritmo-font-size(18px);
+  cursor: pointer;
+  transition: background ease 0.2s;
+
+  &:hover {
+  background: palette(blue, light);
+  }
+}

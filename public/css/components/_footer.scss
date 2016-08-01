@@ -1,0 +1,14 @@
+.footer {
+  width: auto;
+  background: palette(blue, dark);
+  text-align: center;
+  color: palette(white);
+  padding: ritmo(6) 20px ritmo(2) 20px;
+
+  p {
+
+    @include mq($until: break-medium-small) {
+      @include ritmo-font-size(14px);
+    }
+  }
+}
