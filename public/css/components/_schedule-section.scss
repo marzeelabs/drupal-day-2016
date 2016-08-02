@@ -1,0 +1,70 @@
+.schedule-section {
+  @extend .section-commons;
+  background: palette(green);
+  color: palette(green, dark);
+
+  .section-titles__underlines {
+    background: palette(green, dark);
+
+    &:after {
+      background: palette(green, dark);
+    }
+  }
+}
+
+.schedule {
+  @include container (800px);
+  text-align: left;
+  margin-top: ritmo(8);
+}
+
+.schedule-center-text-vertically {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.schedule__line {
+  width: 100%;
+  border-bottom: palette(green, mid-dark) 2px solid;
+  height: ritmo(12);
+
+  &:first-child {
+    text-transform: uppercase;
+    @include ritmo-font-size(20px);
+
+    .schedule__line-speaker {
+      @extend .schedule-center-text-vertically;
+    }
+  }
+}
+
+.schedule__line--break {
+  background: palette(green, mid-dark);
+}
+
+.schedule__line-hour {
+  @include span(3 at 1);
+  @extend .schedule-center-text-vertically;
+
+  @include mq($from: break-medium-small) {
+    @include span(2 at 1);
+    padding-left: 35px;
+  }
+}
+
+.schedule__line-speaker {
+  @include span(3 at 4);
+  @extend .schedule-center-text-vertically;
+
+  @include mq($from: break-medium-small) {
+    @include span(4 at 3);
+  }
+}
+
+.schedule__line-speaker--big-line {
+
+  @include mq($until: 575px) {
+    height: ritmo(22);
+  }
+}

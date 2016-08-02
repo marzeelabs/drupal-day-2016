@@ -1,0 +1,129 @@
+.intro-section {
+  background: palette(white);
+  min-height: 1%;
+  overflow: hidden;
+  margin-top: 0;
+
+  @include mq($from: break-medium) {
+    margin-top: ritmo(4);
+  }
+}
+
+.intro-section__left {
+  padding-top: ritmo(20);
+  height: ritmo(72);
+  color: palette(blue, dark);
+  text-align: center;
+  @include span(6);
+
+  @include mq($from: break-medium) {
+    text-align: left;
+    @include span(isolate 3 at 1);
+  }
+
+  h5 {
+    @include ritmo-font-size(24px);
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: ritmo(1);
+  }
+
+  h1 {
+    @include ritmo-font-size(55px);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+
+    @include mq($from: break-small ) {
+      @include ritmo-font-size(35px);
+    }
+
+    @include mq($from: break-medium-small ) {
+      @include ritmo-font-size(65px);
+    }
+
+    @include mq($from: break-medium ) {
+      @include ritmo-font-size(35px);
+    }
+
+    @include mq($from: break-large) {
+      @include ritmo-font-size(45px);
+    }
+
+    @include mq($from: break-big) {
+      @include ritmo-font-size(55px);
+    }
+
+    @include mq($from: 1350px) {
+      @include ritmo-font-size(65px);
+    }
+  }
+
+  .know-more {
+    @extend .button-green;
+  }
+}
+
+.intro-section__left-block1 {
+  @include span(6);
+
+  @include mq($from: break-small) {
+    @include span(isolate 3 at 1.5);
+  }
+
+  @include mq($from: break-medium) {
+     @include span(isolate 3 at 2);
+  }
+}
+
+.intro-section__left-block2 {
+  @include span(6);
+
+  @include mq($from: break-small) {
+    text-align: left;
+    @include span(isolate 2 at 4.8);
+  }
+
+
+  @include mq($from: break-medium) {
+     @include span(isolate 3 at 5);
+  }
+
+  span {
+    display: block;
+    height: 1px;
+    background: palette(grey);
+    margin: ritmo(3) auto;
+    width: 130px;
+
+    @include mq($from: break-medium-small) {
+      margin: ritmo(3) auto ritmo(3) 0;
+    }
+  }
+
+  p {
+    margin-bottom: ritmo(1);
+    color: palette(grey);
+  }
+}
+
+
+.intro-section__right {
+  @include span(6);
+  margin-top: ritmo(25);
+  height: ritmo(50);
+  background: url(/images/home/img_drupal_aveiro_1.jpg)  20px bottom no-repeat transparent;
+  background-size: contain;
+
+  @include mq($from: break-small) {
+    margin-top: - ritmo(5);
+  }
+
+  @include mq($from: break-medium) {
+    background: url(/images/home/img_drupal_aveiro_1.jpg) 60px bottom no-repeat transparent;
+    background-size: cover;
+    margin-top: 0;
+    height: ritmo(72);
+    @include span(isolate 3 at 4);
+  }
+}
