@@ -26,6 +26,7 @@ $(function() {
       },
 
       setNavigationItemActive = function() {
+
         var currentCategory = '/' + window.location.pathname.substr(1).split('/')[0],
             scrollPosition = $( document ).scrollTop() + $(".navigation").outerHeight(),
             activeClass = 'is-active',
@@ -51,59 +52,42 @@ $(function() {
             });
       },
 
-  fixedHeader = function() {
-    var viewportWidth = $( window ).width(),
-        fixedClass = 'navigation--fixed-top',
-        $navElement = $(".navigation");
+      fixedHeader = function() {
 
-    if ($(window).scrollTop() > '1' && viewportWidth >= breakMobile) {
-      $navElement.addClass(fixedClass);
-    } else {
-      $navElement.removeClass(fixedClass);
-    }
-  };
+        var viewportWidth = $( window ).width(),
+            fixedClass = 'navigation--fixed-top',
+            $navElement = $(".navigation");
+
+        if ($(window).scrollTop() > '1' && viewportWidth >= breakMobile) {
+          $navElement.addClass(fixedClass);
+        } else {
+          $navElement.removeClass(fixedClass);
+        }
+      };
 
   // Toggle mobile navigation
   $(".navigation__mobile-menu__toggle").click(function() {
     $(this).parent().toggleClass('is-open');
   });
 
-      // Force close mobile navigation when clicking anywhere (except the toggle button itself)
+  // Force close mobile navigation when clicking anywhere (except the toggle button itself)
   $( document ).on('mousedown touchstart', function(event) {
-/*
-    if (!$(event.target).closest(".navigation__mobile-menu__toggle").length) {
+
+    var selectorElement = '.navigation li a',
+        targetElement = '.navigation__menu__item';
+
+    $(selectorElement).on('click touch', function(){
       $(".navigation.is-open").removeClass('is-open');
-    }
-*/
+    });
+
+    // Force close mobile navigation when clicking anywhere (except the toggle button itself)
     if (!$(event.target).closest(".navigation").length) {
       $(".navigation.is-open").removeClass('is-open');
     }
   });
 
-  $(function() {
-
-    var selectorElement = '.navigation li a , .intro-section__left a',
-        targetElement = '.navigation__menu__item';
-
-    $(selectorElement).on('click touch', function(){
-      $(targetElement).removeClass('is-active');
-      // this line might be temporary and relates to function on line #131
-      $('.first-selector').css("pointer-events", "auto");
-      $(this).parent().addClass('is-active');
-      $(".navigation.is-open").removeClass('is-open');
-    });
-  });
-
-  $(window).on('resize scroll', fixedHeader);
-
-  $( window ).on('hashchange', scrollToSection).trigger('hashchange');
-  $( window ).on('resize scroll', setNavigationItemActive);
-  $("a[href^='/#']").click(triggerHashChange);
-
-
   //- function for countdown
-
-  $(function() {
+  function countdown() {
 
     var endDate = "September 17, 2016 09:30:00";
 
@@ -113,11 +97,10 @@ $(function() {
       $(this.el).html("<div class='apply-countdown__numbers'>" + this.leadingZeros(data.days, 2) + " <span>Dias</span></div><div class='apply-countdown__numbers'>" + this.leadingZeros(data.hours, 2) + " <span>Horas</span></div><div class='apply-countdown__numbers'>" + this.leadingZeros(data.min, 2) + " <span>Minutos</span></div><div class='apply-countdown__numbers'>" + this.leadingZeros(data.sec, 2) + " <span>Segundos</span></div>");
       }
     });
-  });
-
+  };
 
   //- function for g maps
-  $(function() {
+  function gmaps() {
     $('.map-section__gmap').click(function () {
         $('.map-section__gmap iframe').css("pointer-events", "auto");
     });
@@ -125,21 +108,13 @@ $(function() {
     $( ".map-section__gmap" ).mouseleave(function() {
       $('.map-section__gmap iframe').css("pointer-events", "none");
     });
-  });
+  };
 
-  //- hack to first button in the menu to have a smooth scroll
-  $(function() {
-
-      $('.first-selector').click(function () {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 500, function() {
-            waitForScroll = false;
-            $('.first-selector').css("pointer-events", "none");
-            $('.first-selector').parent().addClass("is-active");
-            });
-        return false;
-    });
-  }); ///
+  $(window).on('resize scroll', fixedHeader);
+  $( window ).on('hashchange', scrollToSection).trigger('hashchange');
+  $( window ).on('resize scroll', setNavigationItemActive);
+  $("a[href^='/#']").click(triggerHashChange);
+  countdown();
+  gmaps();
 
 });
