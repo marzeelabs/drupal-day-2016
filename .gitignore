@@ -5,6 +5,3 @@ npm-debug.log
 Thumbs.db
 .DS_Store
 !.gitkeep
-www/
-public/images/posts/*
-
