@@ -1,7 +1,7 @@
 {
   "globals": {
-    "title": "MZ Harp",
-    "tagline": "Boilerplate for static Harp",
+    "title": "Drupal Day",
+    "tagline": "Aveiro 2016",
     "disqus": false,
     "analytics": false,
     "breakpoints": {
