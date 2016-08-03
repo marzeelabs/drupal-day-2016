@@ -5,25 +5,20 @@
   margin-top: 0;
 
   @include mq($from: break-medium) {
-    margin-top: ritmo(4);
+    margin-top: ritmo(10);
+    position: relative;
   }
 }
 
 .intro-section__left {
-  padding-top: ritmo(20);
-  height: ritmo(72);
+  padding-top: ritmo(14);
   color: palette(blue, dark);
   text-align: center;
   @include span(6);
   margin-bottom: ritmo(5);
 
-  @include mq($from: break-small) {
-    margin-bottom: ritmo(20);
-  }
-
   @include mq($from: break-large) {
     text-align: left;
-    margin-bottom: 0;
     @include span(isolate 3.5 at 1);
     padding-left: 25px;
   }
@@ -67,7 +62,7 @@
   }
 }
 
-.intro-section__left-block1 {
+.intro-section__title {
   @include span(6);
   margin-bottom: ritmo(5);
 
@@ -76,11 +71,11 @@
   }
 
   @include mq($from: break-big) {
-     @include span(isolate 2 at 1.5);
+     @include span(isolate 2 at 2);
   }
 }
 
-.intro-section__left-block2 {
+.intro-section__organization {
   @include span(6);
   padding: 0 5%;
   text-align: center;
@@ -90,13 +85,9 @@
   }
 
   @include mq($from: break-large) {
-     @include span(isolate 4 at 3.5);
+     @include span(isolate 3 at 4.5);
+     text-align: left;
   }
-}
-
-.intro-section__left-block2__first,
-.intro-section__left-block2__second {
-  @include span(6);
 
   p {
     margin-bottom: ritmo(1);
@@ -104,40 +95,36 @@
   }
 }
 
-.intro-section__left-block2__inner-divider {
-   @include span(3);
+.intro-section__organization__coordination {
+  overflow: hidden;
+  margin-bottom: ritmo(4);
 }
 
-.intro-section__left-block2__second {
-  margin-top: ritmo(4);
-  padding-top: ritmo(2);
+.intro-section__organization__logo {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 20px;
 
-  .intro-section__left-block2__inner-divider:last-child {
-    margin-top: ritmo(5);
-  }
+  @include mq($from: break-large) {
+    margin: 0 40px 0 0;
 
-  span {
-    background: palette(grey, x-light);
-    display: block;
-    margin: 0 auto;
-    height: 1px;
-    width: 80%;
-    margin-bottom: ritmo(2);
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
 .intro-section__right {
   @include span(6);
-  margin-top: ritmo(25);
   height: ritmo(50);
   background: url(/images/home/img_drupal_aveiro_1.jpg)  center bottom no-repeat transparent;
   background-size: contain;
 
   @include mq($from: break-large) {
+    position: absolute;
     background: url(/images/home/img_drupal_aveiro_1.jpg) 60px bottom no-repeat transparent;
     background-size: cover;
-    margin-top: 0;
-    height: ritmo(72);
+    height: 100%;
     @include span(isolate 2.5 at 4.5);
   }
 }

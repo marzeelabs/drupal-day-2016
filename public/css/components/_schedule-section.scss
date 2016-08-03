@@ -18,7 +18,7 @@
   margin-top: ritmo(8);
 }
 
-.schedule-center-text-vertically {
+%schedule-center-text-vertically {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -27,16 +27,22 @@
 .schedule__line {
   width: 100%;
   border-bottom: palette(green, mid-dark) 2px solid;
-  height: ritmo(12);
+  @include ritmo-paddings(4);
+  @include clearfix();
+  position: relative;
+
 
   &:first-child {
     text-transform: uppercase;
     @include ritmo-font-size(20px);
-
-    .schedule__line-speaker {
-      @extend .schedule-center-text-vertically;
-    }
   }
+}
+
+.schedule__line__inner {
+  position: relative;
+  float: left;
+  width: 100%;
+  transform: translateY(50%);
 }
 
 .schedule__line--break {
@@ -45,7 +51,8 @@
 
 .schedule__line-hour {
   @include span(3 at 1);
-  @extend .schedule-center-text-vertically;
+  padding-left: 20px;
+  @extend %schedule-center-text-vertically;
 
   @include mq($from: break-medium-small) {
     @include span(2 at 1);
@@ -55,7 +62,7 @@
 
 .schedule__line-speaker {
   @include span(3 at 4);
-  @extend .schedule-center-text-vertically;
+  @extend %schedule-center-text-vertically;
 
   @include mq($from: break-medium-small) {
     @include span(4 at 3);
@@ -65,6 +72,6 @@
 .schedule__line-speaker--big-line {
 
   @include mq($until: 575px) {
-    height: ritmo(22);
+    //height: ritmo(22);
   }
 }
