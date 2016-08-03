@@ -15,7 +15,11 @@
   color: palette(blue, dark);
   text-align: center;
   @include span(6);
-  margin-bottom: ritmo(14);
+  margin-bottom: ritmo(5);
+
+  @include mq($from: break-small) {
+    margin-bottom: ritmo(20);
+  }
 
   @include mq($from: break-large) {
     text-align: left;
@@ -45,12 +49,12 @@
       @include ritmo-font-size(45px);
     }
 
-    @include mq($from: break-big) {
-      @include ritmo-font-size(55px);
+    @include mq($from: 1350px) {
+      @include ritmo-font-size(60px);
     }
 
-    @include mq($from: 1350px) {
-      @include ritmo-font-size(65px);
+    @include mq($from: 1750px) {
+      @include ritmo-font-size(75px);
     }
   }
 
@@ -70,11 +74,16 @@
   @include mq($from: break-large) {
      @include span(isolate 2 at 1);
   }
+
+  @include mq($from: break-big) {
+     @include span(isolate 2 at 1.5);
+  }
 }
 
 .intro-section__left-block2 {
   @include span(6);
   padding: 0 5%;
+  text-align: center;
 
   @include mq($from: break-small) {
     padding: 0 20%;
@@ -87,29 +96,33 @@
 
 .intro-section__left-block2__first,
 .intro-section__left-block2__second {
-  @include span(3);
-
-  span {
-    display: block;
-    height: 1px;
-    background: palette(grey);
-    margin: ritmo(3) auto;
-    width: 130px;
-
-    @include mq($from: break-large) {
-      margin: ritmo(3) auto ritmo(3) 0;
-    }
-  }
+  @include span(6);
 
   p {
     margin-bottom: ritmo(1);
-    color: palette(grey);
+    color: palette(blue);
   }
 }
 
+.intro-section__left-block2__inner-divider {
+   @include span(3);
+}
+
 .intro-section__left-block2__second {
+  margin-top: ritmo(4);
+  padding-top: ritmo(2);
+
+  .intro-section__left-block2__inner-divider:last-child {
+    margin-top: ritmo(5);
+  }
+
   span {
-    background: palette(white);
+    background: palette(grey, x-light);
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+    width: 80%;
+    margin-bottom: ritmo(2);
   }
 }
 
