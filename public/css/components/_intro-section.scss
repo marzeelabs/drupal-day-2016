@@ -15,10 +15,13 @@
   color: palette(blue, dark);
   text-align: center;
   @include span(6);
+  margin-bottom: ritmo(14);
 
-  @include mq($from: break-medium) {
+  @include mq($from: break-large) {
     text-align: left;
-    @include span(isolate 3 at 1);
+    margin-bottom: 0;
+    @include span(isolate 3.5 at 1);
+    padding-left: 25px;
   }
 
   h5 {
@@ -29,21 +32,13 @@
   }
 
   h1 {
-    @include ritmo-font-size(55px);
+    @include ritmo-font-size(60px);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 0;
 
-    @include mq($from: break-small ) {
-      @include ritmo-font-size(35px);
-    }
-
-    @include mq($from: break-medium-small ) {
-      @include ritmo-font-size(65px);
-    }
-
-    @include mq($from: break-medium ) {
-      @include ritmo-font-size(35px);
+    @include mq($from: break-small) {
+      @include ritmo-font-size(75px);
     }
 
     @include mq($from: break-large) {
@@ -61,33 +56,38 @@
 
   .know-more {
     @extend .button-green;
+
+    @include mq($from: break-large) {
+      @include ritmo-font-size(16px);
+    }
   }
 }
 
 .intro-section__left-block1 {
   @include span(6);
+  margin-bottom: ritmo(5);
 
-  @include mq($from: break-small) {
-    @include span(isolate 3 at 1.5);
-  }
-
-  @include mq($from: break-medium) {
-     @include span(isolate 3 at 2);
+  @include mq($from: break-large) {
+     @include span(isolate 2 at 1);
   }
 }
 
 .intro-section__left-block2 {
   @include span(6);
+  padding: 0 5%;
 
   @include mq($from: break-small) {
-    text-align: left;
-    @include span(isolate 2 at 4.8);
+    padding: 0 20%;
   }
 
-
-  @include mq($from: break-medium) {
-     @include span(isolate 3 at 5);
+  @include mq($from: break-large) {
+     @include span(isolate 4 at 3.5);
   }
+}
+
+.intro-section__left-block2__first,
+.intro-section__left-block2__second {
+  @include span(3);
 
   span {
     display: block;
@@ -96,7 +96,7 @@
     margin: ritmo(3) auto;
     width: 130px;
 
-    @include mq($from: break-medium-small) {
+    @include mq($from: break-large) {
       margin: ritmo(3) auto ritmo(3) 0;
     }
   }
@@ -107,23 +107,24 @@
   }
 }
 
+.intro-section__left-block2__second {
+  span {
+    background: palette(white);
+  }
+}
 
 .intro-section__right {
   @include span(6);
   margin-top: ritmo(25);
   height: ritmo(50);
-  background: url(/images/home/img_drupal_aveiro_1.jpg)  20px bottom no-repeat transparent;
+  background: url(/images/home/img_drupal_aveiro_1.jpg)  center bottom no-repeat transparent;
   background-size: contain;
 
-  @include mq($from: break-small) {
-    margin-top: - ritmo(5);
-  }
-
-  @include mq($from: break-medium) {
+  @include mq($from: break-large) {
     background: url(/images/home/img_drupal_aveiro_1.jpg) 60px bottom no-repeat transparent;
     background-size: cover;
     margin-top: 0;
     height: ritmo(72);
-    @include span(isolate 3 at 4);
+    @include span(isolate 2.5 at 4.5);
   }
 }
