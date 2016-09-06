@@ -1,5 +1,56 @@
 {
   "index": {
-    "title": "Drupal Day Portugal"
+    "title": "Drupal Day Portugal",
+    "speakers": {
+      "bruno": {
+        "name": "Bruno Mateus",
+        "drupal": "https://www.drupal.org/u/bmateus",
+        "image": "bruno.png",
+        "company": "Vila Vita Parc",
+        "companyUrl": "https://vilavitaparc.com/"
+      },
+      "catarina": {
+        "name": "Catarina Clemente",
+        "drupal": "https://www.drupal.org/u/catarinavclemente",
+        "image": "catarina.jpg",
+        "company": "Consultant",
+        "companyUrl": "http://www.catarinaclemente.com/"
+      },
+      "francisco": {
+        "name": "Francisco Almeida",
+        "drupal": "https://www.drupal.org/u/chicodasilva",
+        "image": "francisco.jpg",
+        "company": "Pictonio",
+        "companyUrl": "http://pictonio.com/"
+      },
+      "hernani": {
+        "name": "Hernâni Freitas",
+        "drupal": "https://www.drupal.org/u/hernani",
+        "image": "hernani.jpg",
+        "company": "Acquia",
+        "companyUrl": "http://acquia.com"
+      },
+      "luis": {
+        "name": "Luis Correia",
+        "drupal": "https://www.drupal.org/u/lmcorreia",
+        "image": "luis.jpg",
+        "company": "Marzee Labs",
+        "companyUrl": "http://marzeelabs.org"
+      },
+      "ricardo": {
+        "name": "Ricardo Amaro",
+        "drupal": "https://www.drupal.org/u/ricardoamaro",
+        "image": "ricardo.jpg",
+        "company": "Acquia",
+        "companyUrl": "http://acquia.com"
+      },
+      "ricardoM": {
+        "name": "Ricardo Marcelino",
+        "drupal": "https://www.drupal.org/u/rfmarcelino",
+        "image": "ricardom.jpg",
+        "company": "Omibee",
+        "companyUrl": "http://omibee.com"
+      }
+    }
   }
 }
