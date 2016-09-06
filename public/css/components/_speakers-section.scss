@@ -11,3 +11,52 @@
     }
   }
 }
+
+
+.speakers {
+  @include container(1000px);
+}
+
+.speakers__item {
+  display: inline-block;
+  vertical-align: top;
+  color: palette(blue, dark);
+  width: span(3);
+  @include gutters();
+  @include ritmo-bottom-margin(5);
+
+  @include mq($from: break-medium) {
+    width: span(2);
+    @include ritmo-bottom-margin(10);
+  }
+
+  @include mq($from: break-large) {
+    width: span(1.5);
+    @include ritmo-bottom-margin(10);
+  }
+}
+
+.speakers__image-wrapper {
+  width: 85px;
+  margin: 0 auto ritmo(2);
+  position: relative;
+
+  span {
+    position: absolute;
+    background: white;
+    border-radius: 100%;
+    right: -10px;
+    bottom: -5px;
+    z-index: 10;
+    @include ritmo-font-size(20px, 4);
+  }
+}
+
+.speakers__image {
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.speakers__name {
+  text-transform: uppercase;
+}

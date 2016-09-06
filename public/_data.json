@@ -1,5 +1,42 @@
 {
   "index": {
-    "title": "Drupal Day Portugal"
+    "title": "Drupal Day Portugal",
+    "speakers": {
+      "bruno": {
+        "name": "Bruno Mateus",
+        "drupal": "https://www.drupal.org/u/bmateus",
+        "image": "bruno.png"
+      },
+      "catarina": {
+        "name": "Catarina Clemente",
+        "drupal": "https://www.drupal.org/u/catarinavclemente",
+        "image": "catarina.jpg"
+      },
+      "francisco": {
+        "name": "Francisco Almeida",
+        "drupal": "https://www.drupal.org/u/chicodasilva",
+        "image": "francisco.jpg"
+      },
+      "hernani": {
+        "name": "Hernâni Freitas",
+        "drupal": "https://www.drupal.org/u/hernani",
+        "image": "hernani.jpg"
+      },
+      "luis": {
+        "name": "Luis Correia",
+        "drupal": "https://www.drupal.org/u/lmcorreia",
+        "image": "luis.jpg"
+      },
+      "ricardo": {
+        "name": "Ricardo Amaro",
+        "drupal": "https://www.drupal.org/u/ricardoamaro",
+        "image": "ricardo.jpg"
+      },
+      "ricardoM": {
+        "name": "Ricardo Marcelino",
+        "drupal": "https://www.drupal.org/u/rfmarcelino",
+        "image": "ricardom.jpg"
+      }
+    }
   }
 }

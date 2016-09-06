@@ -3,3 +3,17 @@ section#speakers-section.speakers-section
   h4.section-titles Oradores
 
   .section-titles__underlines
+
+  .speakers
+
+    for speaker in public._data.index.speakers
+
+
+      a.speakers__item(href="#{speaker.drupal}")
+
+        .speakers__image-wrapper
+          .speakers__image
+            img(src="/images/speakers/#{speaker.image}")
+          span.drupalday-druplicon
+
+        .speakers__name #{speaker.name}
