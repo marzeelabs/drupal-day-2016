@@ -67,6 +67,15 @@
   @include mq($from: break-medium-small) {
     @include span(4 at 3);
   }
+
+  a {
+    color: palette(blue, dark);
+
+    &:hover,
+    &:focus {
+      color: palette(blue);
+    }
+  }
 }
 
 .schedule__line-speaker--big-line {
@@ -74,4 +83,11 @@
   @include mq($until: 575px) {
     //height: ritmo(22);
   }
+}
+
+.schedule__line-logo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
 }
