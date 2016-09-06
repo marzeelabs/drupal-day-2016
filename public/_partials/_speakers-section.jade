@@ -9,11 +9,13 @@ section#speakers-section.speakers-section
     for speaker in public._data.index.speakers
 
 
-      a.speakers__item(href="#{speaker.drupal}")
+      .speakers__item
 
-        .speakers__image-wrapper
+        a.speakers__image-wrapper(href="#{speaker.drupal}")
           .speakers__image
             img(src="/images/speakers/#{speaker.image}")
           span.drupalday-druplicon
 
-        .speakers__name #{speaker.name}
+        a.speakers__name(href="#{speaker.drupal}") #{speaker.name}
+
+        a.speakers__company(href="#{speaker.companyUrl}") #{speaker.company}

@@ -12,7 +12,6 @@
   }
 }
 
-
 .speakers {
   @include container(1000px);
 }
@@ -20,7 +19,6 @@
 .speakers__item {
   display: inline-block;
   vertical-align: top;
-  color: palette(blue, dark);
   width: span(3);
   @include gutters();
   @include ritmo-bottom-margin(5);
@@ -35,17 +33,14 @@
     width: span(1.5);
     @include ritmo-bottom-margin(10);
   }
-
-  &:hover,
-  &:focus {
-    color: palette(blue);
-  }
 }
 
 .speakers__image-wrapper {
   width: 85px;
   margin: 0 auto ritmo(2);
   position: relative;
+  display: block;
+  color: palette(blue, dark);
 
   span {
     position: absolute;
@@ -55,6 +50,11 @@
     bottom: -5px;
     z-index: 10;
     @include ritmo-font-size(20px, 4);
+  }
+
+  &:hover,
+  &:focus {
+    color: palette(blue);
   }
 }
 
@@ -74,12 +74,30 @@
     opacity: 0.1;
     transition: all ease .5s;
 
-    .speakers__item:hover & {
+    .speakers__image-wrapper:hover & {
       opacity: 1;
     }
   }
 }
 
 .speakers__name {
+  display: block;
   text-transform: uppercase;
+  color: palette(blue, dark);
+
+  &:hover,
+  &:focus {
+    color: palette(blue);
+  }
+}
+
+.speakers__company {
+  display: block;
+  @include ritmo-font-size(14px);
+  color: palette(blue, dark);
+
+  &:hover,
+  &:focus {
+    color: palette(blue);
+  }
 }
