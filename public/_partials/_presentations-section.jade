@@ -8,7 +8,6 @@ section#presentation-section.presentation-section
 
     for speaker in public._data.index.speakers
 
-
       .presentation__item
 
         a.presentation__image-wrapper(href="#{speaker.drupal}" target="_blank")
@@ -24,7 +23,7 @@ section#presentation-section.presentation-section
           .presentation__title "#{speaker.presentationTitle}"
 
         //-if speaker.presentationVideo
-        //-  .presentation__video <iframe src="#{speaker.presentationVideo}" frameborder="0" allowfullscreen></iframe>
+        .presentation__video <iframe src="#{speaker.presentationVideo}" frameborder="0" allowfullscreen></iframe>
 
         if speaker.presentationUrl
           a.presentation__url(href="#{speaker.presentationUrl}" target="_blank") Ver Apresentação

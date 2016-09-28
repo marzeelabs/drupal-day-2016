@@ -13,7 +13,7 @@
 }
 
 .presentation {
-  @include container(1000px);
+  @include container(1200px);
   padding-top: ritmo(5);
 }
 
@@ -25,7 +25,12 @@
   @include ritmo-bottom-margin(5);
   transition: color ease .5s;
 
-  @include mq($from: break-medium) {
+  @include mq($from: break-medium, $until: break-large) {
+    width: span(3);
+    @include ritmo-bottom-margin(10);
+  }
+
+  @include mq($from: break-large) {
     width: span(2);
     @include ritmo-bottom-margin(10);
   }
@@ -58,7 +63,7 @@
 
   span {
     position: absolute;
-    background: palette(blue);
+    color: palette(blue);
     border-radius: 100%;
     right: -10px;
     bottom: -5px;
